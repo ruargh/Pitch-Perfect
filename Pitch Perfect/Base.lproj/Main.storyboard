@@ -64,15 +64,41 @@
             </objects>
             <point key="canvasLocation" x="-647" y="13"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Sounds View Controller-->
         <scene sceneID="Nlu-rw-YIp">
             <objects>
-                <viewController id="M8Y-Ou-vwr" sceneMemberID="viewController">
+                <viewController id="M8Y-Ou-vwr" userLabel="Play Sounds View Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ILA-mm-E6a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ibf-E0-Cso">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dzP-dh-ZBy">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwM-5o-1V1" userLabel="Slow Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="524"/>
+                                                <state key="normal" image="Slow"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9P-5q-rqk" userLabel="Fast Button">
+                                                <rect key="frame" x="160" y="0.0" width="160" height="524"/>
+                                                <state key="normal" image="Fast"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nRD-hX-8Yf"/>
-                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ibf-E0-Cso" firstAttribute="leading" secondItem="nRD-hX-8Yf" secondAttribute="leading" id="aZG-82-i4i"/>
+                            <constraint firstItem="nRD-hX-8Yf" firstAttribute="bottom" secondItem="ibf-E0-Cso" secondAttribute="bottom" id="lq9-Jx-ph1"/>
+                            <constraint firstItem="ibf-E0-Cso" firstAttribute="top" secondItem="nRD-hX-8Yf" secondAttribute="top" id="nLo-mY-wef"/>
+                            <constraint firstItem="nRD-hX-8Yf" firstAttribute="trailing" secondItem="ibf-E0-Cso" secondAttribute="trailing" id="skn-Pv-21O"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wf2-V2-G8M"/>
                 </viewController>
@@ -100,7 +126,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Fast" width="90" height="90"/>
         <image name="RecordButton" width="155" height="155"/>
+        <image name="Slow" width="90" height="90"/>
         <image name="Stop" width="155" height="155"/>
     </resources>
 </document>
