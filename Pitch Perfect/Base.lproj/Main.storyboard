@@ -57,7 +57,7 @@
                         <outlet property="recordButton" destination="OdM-DM-Jas" id="r8x-M9-OuR"/>
                         <outlet property="recordingLabel" destination="KIQ-xV-Bsc" id="UUG-jD-2u1"/>
                         <outlet property="stopRecordingButton" destination="Ucf-hI-PaO" id="7X0-xs-yrv"/>
-                        <segue destination="M8Y-Ou-vwr" kind="show" id="vob-AJ-9wB"/>
+                        <segue destination="M8Y-Ou-vwr" kind="show" identifier="stopRecording" id="EON-ob-he2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -67,7 +67,7 @@
         <!--Play Sounds View Controller-->
         <scene sceneID="Nlu-rw-YIp">
             <objects>
-                <viewController id="M8Y-Ou-vwr" userLabel="Play Sounds View Controller" sceneMemberID="viewController">
+                <viewController id="M8Y-Ou-vwr" userLabel="Play Sounds View Controller" customClass="PlaySoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ILA-mm-E6a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +158,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKe-wk-fFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1629.375" y="12.67605633802817"/>
+            <point key="canvasLocation" x="-1686" y="12"/>
         </scene>
     </scenes>
     <resources>

@@ -1,5 +1,5 @@
 //
-//  PlaySoundViewController.swift
+//  PlaySoundsViewController.swift
 //  Pitch Perfect
 //
 //  Created by Ruargh on 2021/05/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlaySoundViewController: UIViewController {
+class PlaySoundsViewController: UIViewController {
     
     var recordedAudioURL: URL!
 
