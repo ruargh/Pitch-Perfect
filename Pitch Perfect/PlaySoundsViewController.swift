@@ -29,6 +29,8 @@ class PlaySoundsViewController: UIViewController {
         case slow = 0, fast, chipmunk, vader, echo, reverb
     }
     
+    // MARK: - Call playSound for button pressed
+    
     @IBAction func playSoundForButton(_ sender: UIButton) {
         switch(ButtonType(rawValue: sender.tag)!) {
         case .slow:
@@ -47,6 +49,8 @@ class PlaySoundsViewController: UIViewController {
 
         configureUI(.playing)
     }
+    
+    // MARK: - Stop playing audio
     
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
         stopAudio()

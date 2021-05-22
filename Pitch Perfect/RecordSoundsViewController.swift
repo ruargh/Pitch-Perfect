@@ -30,6 +30,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         
     }
     
+    // MARK: - setRordingState utility function
+    
     func setRecordingState(isRecording: Bool) {
         if isRecording {
             recordingLabel.text = "Recording in progress"
@@ -42,6 +44,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
 
+    // MARK: - Start recording
+    
     @IBAction func recordAudio(_ sender: AnyObject) {
         setRecordingState(isRecording: true)
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
@@ -59,6 +63,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.prepareToRecord()
         audioRecorder.record()
     }
+    
+    // MARK: - Stop recording
     
     @IBAction func stopRecording(_ sender: Any) {
         audioRecorder.stop()
