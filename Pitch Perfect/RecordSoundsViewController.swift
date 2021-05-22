@@ -31,23 +31,35 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     // MARK: - setRordingState utility function
+    /**
+     🛠️ Utility to enable and disable buttons according to state
+
+     Calling this method with `true`:
+     1) disables the `recordButton`
+     2) enables the `stopRecordingButton`.
+     3) sets the `recordingLabel` to `"Recording..."`
+     
+     Calling this method with `false`:
+     1) enables the `recordButton`
+     2) disables the `stopRecordingButton`.
+     3) sets the `recordingLabel` to `"Tap to record"`
+     
+
+     - Parameter recording: Set to `true` if recording is in progress
+     - Precondition: `recording` must be a Bool value.
+     */
     
-    func setRecordingState(isRecording: Bool) {
-        if isRecording {
-            recordingLabel.text = "Recording in progress"
-            stopRecordingButton.isEnabled = true
-            recordButton.isEnabled = false
-        } else {
-            recordButton.isEnabled = true
-            stopRecordingButton.isEnabled = false
-            recordingLabel.text = "Tap to Record"
-        }
+    func setRecordingState(recording: Bool) {
+        
+        stopRecordingButton.isEnabled = recording
+        recordButton.isEnabled = !recording
+        recordingLabel.text = recording ? "Recording..." : "Tap to record"
     }
 
     // MARK: - Start recording
     
     @IBAction func recordAudio(_ sender: AnyObject) {
-        setRecordingState(isRecording: true)
+        setRecordingState(recording: true)
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
@@ -70,7 +82,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
-        setRecordingState(isRecording: false)
+        setRecordingState(recording: false)
     }
     
     // MARK: - Audio Recorder Delegate
