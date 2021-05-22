@@ -29,7 +29,7 @@ class PlaySoundsViewController: UIViewController {
         case slow = 0, fast, chipmunk, vader, echo, reverb
     }
     
-    // MARK: - Call playSound for button pressed
+    // MARK: - Call playSound function for the effects button pressed
     
     @IBAction func playSoundForButton(_ sender: UIButton) {
         switch(ButtonType(rawValue: sender.tag)!) {
