@@ -29,6 +29,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         print("viewWillAppear called")
         
     }
+    
 
     @IBAction func recordAudio(_ sender: AnyObject) {
         recordingLabel.text = "Recording in progress"
@@ -59,6 +60,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
+    
+    // MARK: - Audio Recorder Delegate
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
